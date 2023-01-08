@@ -1,0 +1,53 @@
+{
+    "layer": "top", // Поверх всех окон
+    "position": "top", // Позиция
+    "height": 30, // Размер
+    "spacing": 0, // Отступ между модулями
+    //"margin-left": 10,
+    //"margin-right": 10,
+    //"margin-top": 5,
+
+    // =================== РАСПОЛОЖЕНИЕ МОДУЛЕЙ ===============
+
+    "modules-left": ["wlr/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "memory", "cpu", "tray"],
+
+    // =============== КОНФИГУАРАЦИЯ МОДУЛЕЙ ==================
+    "wlr/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "timezone": "Asia/Yekaterinburg",
+        "format": "  {:%a, %b %d, %Y | %I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 1
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {used:0.1f}GB"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "headset": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    }
+}

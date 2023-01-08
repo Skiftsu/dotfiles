@@ -1,0 +1,24 @@
+* {
+  font-family: mononoki Nerd Font;
+  font-size: 11px;
+}
+
+#waybar {
+    background-color: #141425;
+    background-position: 0px, 1200px;
+  }
+  #workspaces, #workspaces button, #clock, #pulseaudio, #memory, #cpu, #tray {
+    color: #d4d4d4;
+    border-radius: 0;
+    transition: none;
+    padding: 0 15px;
+  }
+  #workspaces, #workspaces button {
+    padding: 0 4px 0 4px;
+  }
+  #workspaces button.active {
+    background-color: #d4d4d4;
+    color: #0e0c0c;
+    border-radius: 8px;
+    padding: 4px 4px;
+  }
