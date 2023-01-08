@@ -1,0 +1,129 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 10px;
+  color: #DDDADA;
+}
+
+window#waybar {
+  border-radius: 0px;
+  background: #32332c;
+}
+
+
+
+/* LEFT ==============================================*/
+#custom-logo {
+  margin: 0px 10px;
+  font-size: 15px;
+}
+
+#custom-image {
+  margin: 3px;
+  border-radius: 4px;
+  background-image: url("/home/skiftsu/Pictures/4b.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 0px 100px;
+  color: #e0e0e0;
+}
+
+/* RIGHT ==============================================*/
+#rightpanel {
+  background: #1d1d1d;
+  border-radius: 4px;
+  margin: 2px 5px;
+}
+
+#language,
+#cpu,
+#memory,
+#pulseaudio,
+#keyboard-state,
+#custom-docker {
+  padding: 0px 8px;
+}
+
+#tray {
+  padding: 0px 10px;
+  margin: 3px 0px;
+  border-radius: 4px;
+  background: #454543;
+}
+
+#language {
+  margin: 4px;
+  font-size: 15px;
+  border-radius: 4px;
+  background: #816bbe;
+}
+
+#cpu {
+  color: #9d9dcf;
+  margin: 1px -5px;
+}
+
+#memory {
+  color: #b9c057;
+  margin: 1px -5px;
+}
+
+#custom-docker {
+  color: #dfdfdf;
+  margin: 1px -5px;
+  font-size: 13px;
+}
+
+#pulseaudio {
+  margin: 4px 4px;
+  border-radius: 4px;
+  background: #58e022;
+  color: #000000;
+}
+
+/* WORKSPACES ==============================================*/
+#workspaces {
+  min-width: 0px;
+  padding: 0px;
+  margin: 3px;
+  border-radius: 4px;
+  background: #454543;
+}
+
+#workspaces button,
+#workspaces button.urgent,
+#workspaces button.visible,
+#workspaces button.active,
+#workspaces button:hover,
+#workspaces button.persistent,
+#workspaces button.hidden,
+#workspaces button.focused {
+  transition: none;
+  background: transparent;
+  color: white;
+  border-radius: 6px;
+  padding: 0px 15px;
+  min-width: 0px;
+  margin: 1px;
+  font-size: 5px;
+}
+
+#workspaces button.urgent {
+  background: #b9241f;
+}
+
+#workspaces button.visible  {
+  background: #042c29;
+}
+
+#workspaces button.active {
+  background: #a88bcb;
+}
+
+#workspaces button:hover{
+  background: #e7e7e7;
+}
+
+#workspaces button.hidden,
+#workspaces button.focused {
+  background: #b9241f;
+}

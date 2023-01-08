@@ -1,0 +1,75 @@
+;; ** Variables ***********************************************************************
+
+;; System vars
+(deflisten VOLUME `bash ../scripts/audio --get-vol`)
+(deflisten VOLUMEICON `bash ../scripts/audio --get-volicon`)
+(deflisten MIC `bash ../scripts/audio --get-mic`)
+(deflisten MICICON `bash ../scripts/audio --get-micicon`)
+;; Music vars
+(deflisten SONG `bash ../scripts/music --song`)
+(deflisten ARTIST `bash ../scripts/music --artist`)
+(deflisten STATUS `bash ../scripts/music --status`)
+;; Calendar vars
+(defpoll day :interval "20h" "date '+%d'")
+(defpoll year :interval "20h" "date '+%Y'")
+
+;; ** Elements **************************************************************************
+
+;; system sliders
+(defwidget sys_sliders []
+  (box :class "genwin" :vexpand "false" :hexpand "false" :width 400
+	(box :class "slidersbox" :orientation "v" :spacing 10 :halign "left" :valign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+	  (box :class "volume_bar" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false" 
+		(button :width 30 :onclick "bash ../scripts/audio --toggle-vol" 
+          (label :class "iconvolume" :text VOLUMEICON))
+		(scale :min 0 :max 100 :value VOLUME :active "true" :onchange "bash ../scripts/audio --set-vol {}"))
+      (box :class "mic_bar" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+		(button :width 30 :onclick "bash ../scripts/audio --toggle-mic" 
+          (label :class "iconmic" :text MICICON))
+		(scale :min 0 :max 100 :value MIC :active "true" :onchange "bash ../scripts/audio --set-mic {}"))
+      (box :class "bright_bar" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+		))))
+
+	
+
+;; ** Widgets **************************************************************************
+
+;;system
+(defwidget system []
+  (box :space-evenly "false" :orientation "v" :spacing 10 :width 400
+    (box :class "row" :orientation "h" :space-evenly "false" :spacing 10 :height 60
+      (sys_sliders))
+  ))
+
+;; Music
+(defwidget music []
+    (box :class "genwin" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false"
+      (box :class "genwin" :orientation "h" :space-evenly "true" :vexpand "false" :hexpand "false"
+          (box :orientation "v" :width 80
+	  	    (label :halign "center" :class "song" :wrap "true" :limit-width 20 :text SONG)
+	  	    (label :halign "center" :class "artist" :wrap "true" :limit-width 15 :text ARTIST)))
+
+		(box :orientation "h" :spacing 20 :halign "center" :space-evenly "true" :vexpand "false" :hexpand "false"
+		  (button :class "btn_prev" :onclick "bash ../scripts/music --prev" "󰒮")
+		  (button :class "btn_play" :onclick "bash ../scripts/music --toggle" STATUS)
+		  (button :class "btn_next" :onclick "bash ../scripts/music --next" "󰒭"))))
+
+
+;; Calendar
+(defwidget cal []
+	(box :class "genwin" :orientation "v"
+	    (calendar :class "cal" :day day :year year)))
+
+
+
+;; ******** DASHBOARD ********************************************************************
+(defwidget dashboard []
+  (box :class "background" :space-evenly "false" :orientation "v" :spacing 15 :width 400
+    (system)
+    (music)
+    (cal)))
+
+;; ** Windows *************************************************************************
+
+(defwindow dashboard :stacking "fg" :focusable "false" :monitor 1 :geometry (geometry :anchor "top left" :x 5 :y 5)
+  (dashboard))
