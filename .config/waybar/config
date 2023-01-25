@@ -1,6 +1,6 @@
 {
     "layer": "top", // Поверх всех окон
-    "position": "top", // Позиция
+    "position": "bottom", // Позиция
     "height": 30, // Размер
     "spacing": 0, // Отступ между модулями
     //"margin-left": 10,
@@ -11,7 +11,7 @@
 
     "modules-left": ["wlr/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "memory", "cpu", "tray"],
+    "modules-right": ["keyboard-state", "pulseaudio", "memory", "cpu", "tray"],
 
     // =============== КОНФИГУАРАЦИЯ МОДУЛЕЙ ==================
     "wlr/workspaces": {
@@ -21,6 +21,14 @@
     },
     "tray": {
         "spacing": 10
+    },
+    "keyboard-state": {
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
     },
     "clock": {
         "timezone": "Asia/Yekaterinburg",

@@ -7,7 +7,7 @@
     background-color: #141425;
     background-position: 0px, 1200px;
   }
-  #workspaces, #workspaces button, #clock, #pulseaudio, #memory, #cpu, #tray {
+  #workspaces, #workspaces button, #clock, #pulseaudio, #memory, #cpu, #tray, #keyboard-state {
     color: #d4d4d4;
     border-radius: 0;
     transition: none;
