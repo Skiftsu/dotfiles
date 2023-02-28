@@ -3,7 +3,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH="$HOME/.oh-my-zsh"
-export EDITOR='nvim'
+export EDITOR='code'
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
 # Configuration
@@ -16,11 +16,8 @@ source $ZSH/oh-my-zsh.sh
 
 
 neofetch
-echo "󰊠  󰊠  󰊠 ... GG:WP"
 
-alias startwm="bash .config/hypr/scripts/startwm"
-alias lvim="/home/skiftsu/.local/bin/lvim"
-alias nv="nvim"
+alias startwm="bash .config/hypr/scripts/StartWM"
 
 # Expand ue4cli
 ue() {
