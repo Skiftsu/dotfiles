@@ -1,0 +1,48 @@
+# BSPWM hotkeys
+
+# Reload sxhkd:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Exit bspwm
+super + m
+	bspc quit
+
+# Restart bspwm
+super + alt + r
+	bspc wm -r
+
+# Terminal
+super + Return
+	kitty
+
+# Rofi
+super + r
+	rofi -show drun
+
+# Закрыть окно
+super + c
+	bspc node -c
+
+super + alt + F4
+	bspc node -k
+
+# Изменение выбранного окна и перемещение окон
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# Режим окна
+super + {t,v,f}
+	bspc node -t {tiled,floating,fullscreen}
+
+# Монокль
+super + shift + f
+	bspc desktop -l next
+
+# Свапнуть выбранное окно с самым большим
+super + g
+	bspc node -s biggest.window
+
+# Switch workspace
+super + {_,shift + }{1-6}
+	bspc {desktop -f,node -d} '^{1-6}'

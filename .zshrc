@@ -17,7 +17,8 @@ source $ZSH/oh-my-zsh.sh
 
 neofetch
 
-alias startwm="bash .config/hypr/scripts/StartWM"
+alias starthypr="bash .config/resources/scripts/StartHyprland"
+alias startbspwm="exec startx"
 
 # Expand ue4cli
 ue() {
