@@ -42,7 +42,7 @@ fi
 
 ###########################################################################################
 
-printf "Arch installer"
+printf "Arch installer\n"
 while true; do
 	read -rp "Start installation? [y/n]: " yn
 		case $yn in
