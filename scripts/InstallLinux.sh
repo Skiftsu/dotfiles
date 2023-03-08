@@ -24,18 +24,18 @@ while true; do
 		esac
 done
 
-# Форматирование разделов
+new_action "Formatting Partitions"
 mkfs.fat -F32 /dev/nvme0n1p1
 mkfs.btrfs -f /dev/nvme0n1p2
 
-# Монтирование разделов
+new_action "Mounting Partitions"
 mount /dev/nvme0n1p2 /mnt
 mount --mkdir /dev/nvme0n1p1 /mnt/efi
 
-# Установка ядра и других нужных пакетов
+new_action "Installing the kernel and other packages"
 pacstrap -i /mnt base linux-zen linux-firmware linux-zen-headers amd-ucode btrfs-progs --noconfirm
 
-# Вход в систему
+new_action "arch-chroot"
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 

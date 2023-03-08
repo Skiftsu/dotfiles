@@ -51,7 +51,7 @@ pacman -Syyu
 pacman_install_packages base-devel neovim git networkmanager grub efibootmgr
 systemctl enable NetworkManager
 
-# Настройка grub
+new_action "Grub"
 grub-install /dev/nvme0n1
 grub-mkconfig -o /boot/grub/grub.cfg
 
