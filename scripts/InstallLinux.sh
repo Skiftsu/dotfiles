@@ -33,7 +33,7 @@ mount /dev/nvme0n1p2 /mnt
 mount --mkdir /dev/nvme0n1p1 /mnt/efi
 
 # Установка ядра и других нужных пакетов
-pacstrap -i /mnt base linux-zen linux-firmware linux-zen-headers amd-ucode btrfs-progs
+pacstrap -i /mnt base linux-zen linux-firmware linux-zen-headers amd-ucode btrfs-progs --noconfirm
 
 # Вход в систему
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -42,13 +42,4 @@ arch-chroot /mnt
 # После выхода
 umount -R /mnt
 
-printf "${yellow}Installation completed!\n${N}"
-
-while true; do
-	read -rp "Reboot? [y/n]: " yn
-		case $yn in
-			[Yy]* ) reboot;;
-			[Nn]* ) exit;;
-			* ) printf "${red}Error: Write 'y' or 'n'\n${N}";;
-		esac
-done
+printf "${yellow}Installation completed! Reboot pls!\n${N}"
