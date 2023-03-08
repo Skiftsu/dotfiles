@@ -51,6 +51,10 @@ pacman -Syyu
 pacman_install_packages base-devel neovim git networkmanager grub efibootmgr
 systemctl enable NetworkManager
 
+# Настройка grub
+grub-install /dev/nvme0n1
+grub-mkconfig -o /boot/grub/grub.cfg
+
 new_action "Localization"
 sed -i "/en_US.UTF-8 UTF-8/"'s/^#//' /etc/locale.gen
 sed -i "/ru_RU.UTF-8 UTF-8/"'s/^#//' /etc/locale.gen
@@ -60,6 +64,7 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 # Настройка времени
 new_action "Time"
 timedatectl set-timezone Asia/Yekaterinburg
+hwclock --systohc
 pacman_install_packages ntp
 systemctl enable ntpd
 
@@ -84,10 +89,6 @@ chmod 0600 /swap/swapfile
 mkswap -U clear /swap/swapfile
 swapon /swap/swapfile
 echo "/swap/swapfile none swap defaults 0 0" >> /etc/fstab
-
-# Настройка grub
-grub-install /dev/nvme0n1
-grub-mkconfig -o /boot/grub/grub.cfg
 
 new_action "Add user"
 # Включание группы wheel для выполнения sudo
