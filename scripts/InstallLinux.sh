@@ -30,7 +30,7 @@ mkfs.btrfs -f /dev/nvme0n1p2
 
 new_action "Mounting Partitions"
 mount /dev/nvme0n1p2 /mnt
-mount --mkdir /dev/nvme0n1p1 /mnt/efi
+mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi
 
 new_action "Installing the kernel and other packages"
 pacstrap -i /mnt base linux-zen linux-firmware linux-zen-headers amd-ucode btrfs-progs --noconfirm

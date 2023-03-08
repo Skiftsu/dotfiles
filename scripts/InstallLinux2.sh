@@ -42,12 +42,23 @@ fi
 
 ##################################################################
 
+while true; do
+	read -rp "Start installation? [y/n]: " yn
+		case $yn in
+			[Yy]* ) break;;
+			[Nn]* ) exit;;
+			* ) printf "${red}Error: Write 'y' or 'n'\n${N}";;
+		esac
+done
+
+
+new_action "multilib"
 # Включение возможности устанавливаеть 32 битные пакеты
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
-
 pacman -Syyu
 
 # Установка нужных пакетов
+new_action "Base"
 pacman_install_packages base-devel neovim git networkmanager grub efibootmgr
 systemctl enable NetworkManager
 
