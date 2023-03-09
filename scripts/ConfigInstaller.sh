@@ -147,7 +147,7 @@ new_action "Installing fonts"
 paru_install_packages ttf-jetbrains-mono-nerd ttf-apple-emoji ttf-material-design-icons-git
 
 new_action "Installing packages"
-paru_install_packages rofi kitty zsh ranger dunst polkit-gnome p7zip ntfs-3g deluge-gtk network-manager-applet networkmanager-openvpn
+paru_install_packages neofetch rofi-lbonn-wayland-git kitty zsh ranger dunst polkit-gnome p7zip ntfs-3g deluge-gtk network-manager-applet networkmanager-openvpn
 
 new_action "Installing sound packages"
 paru_install_packages pulseaudio pulseaudio-alsa alsa-utils alsa-oss
@@ -175,5 +175,9 @@ sudo bash $SCRIPT_DIR/GrubThemeInstaller.sh
 
 new_action "Copy dotfiles"
 copy_config_files
+
+new_action "For unreal engine"
+paru_install_packages python-pip
+pip3 install ue4cli
 
 printf "${yellow}Installation completed!\n${N}"

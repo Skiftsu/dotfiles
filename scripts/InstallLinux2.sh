@@ -74,10 +74,10 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 # Настройка времени
 new_action "Time"
-timedatectl set-timezone Asia/Yekaterinburg
-hwclock --systohc
 pacman_install_packages ntp
 systemctl enable ntpd
+timedatectl set-ntp true
+timedatectl set-timezone Asia/Yekaterinburg
 
 
 # Настройка для видеокарт nvidia

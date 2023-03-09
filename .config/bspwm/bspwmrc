@@ -5,6 +5,7 @@ bash ~/.config/polybar/launch.sh&
 nitrogen  --restore&
 nm-applet --indicator&
 flameshot&
+bash ~/.config/resources/scripts/AutoStart&
 
 
 bspc monitor HDMI-0 -d 1 2 3
@@ -40,4 +41,4 @@ bspc config gapless_monocle      false
 bspc config paddingless_monocle	 true
 
 #СХЕМЫ СОГЛАСНО КОТОРЫМ БУДУТ ОТКРЫВАТСЯ ОКНА
-#bspc config automatic_scheme	spiral
+bspc config automatic_scheme alternate
