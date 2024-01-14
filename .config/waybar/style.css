@@ -39,6 +39,7 @@ window#waybar {
 #memory,
 #pulseaudio,
 #keyboard-state,
+#custom-fullscreen,
 #custom-docker {
   padding: 0px 8px;
 }
@@ -48,6 +49,13 @@ window#waybar {
   margin: 3px 0px;
   border-radius: 4px;
   background: #454543;
+}
+
+#custom-fullscreen {
+  padding: 0px 10px;
+  margin: 3px 0px;
+  font-size: 15px;
+  border-radius: 4px;
 }
 
 #language {

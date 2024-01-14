@@ -32,7 +32,7 @@ echo "----------------------------"
 echo "-- INSTALLING kernel 2/13 --"
 printf "${red}It will take a lot of time\n${N}"
 echo "----------------------------"
-pacstrap /mnt base linux-zen linux-zen-headers linux-firmware --noconfirm
+pacstrap /mnt base linux linux-headers linux-firmware --noconfirm
 
 echo "---------------------------"
 echo "-- Fstab generation 3/13 --"
@@ -60,7 +60,7 @@ pacman -S base-devel --noconfirm
 pacman -S btrfs-progs networkmanager neovim git ntp --noconfirm
 pacman -S grub efibootmgr --noconfirm
 pacman -S amd-ucode --noconfirm
-pacman -S nvidia-dkms nvidia-utils lib32-nvidia-utils vulkan-icd-loader lib32-vulkan-icd-loader opencl-nvidia lib32-opencl-nvidia --noconfirm
+pacman -S nvidia nvidia-utils lib32-nvidia-utils vulkan-icd-loader lib32-vulkan-icd-loader opencl-nvidia lib32-opencl-nvidia --noconfirm
 pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-audio pipewire-jack --noconfirm
 
 echo "----------------------------------"
@@ -88,7 +88,6 @@ echo "------------------------"
 echo "-- Adding a user 9/13 --"
 echo "------------------------"
 useradd -m $USER
-usermod -aG wheel,docker,input $USER
 echo $USER:$PASSWORD | chpasswd
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 echo "root:$ROOT_PASSWORD" | chpasswd
@@ -131,8 +130,7 @@ echo "-------------------------------------------------"
 echo ""
 echo ""
 echo ""
-echo ""
-printf "${red}Install Complete, You can reboot now"\n${N}"
+echo "Install Complete, You can reboot now"
 
 rm /mnt/next.sh
 REALEND

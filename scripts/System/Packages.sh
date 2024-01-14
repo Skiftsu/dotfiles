@@ -33,19 +33,26 @@ function print_category() {
 print_category "Rust and Paru(AUR helper)"
 # Rust https://rustup.rs/
 bash curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cd ~
+mkdir git
+cd git
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
 
 print_category "System"
 # Filesystem utils
 install_packages ntfs2btrfs exfat-utils
 install_packages qt5-wayland qt5ct libva libva-nvidia-driver-git
 install_packages hyprland hyprpaper waybar polkit-gnome
-install_packages autofs darkman hyprshot
+install_packages xdg-desktop-portal-gtk xdg-desktop-portal-hyprland
+install_packages autofs hyprshot
 # Уведомления, меню, лаунчер
 install_packages swaync eww-wayland rofi-lbonn-wayland
 
 print_category "Soft"
 # ЧтениеФайлов, PDF Rreader, торрент, image viewer, video viewer, file explorer, для работы с дисками
-install_packages evince zathura qbittorrent eog kitty vlc nautilus gnome-disk-utility
+install_packages evince zathura qbittorrent eog kitty mpv nautilus gnome-disk-utility
 install_packages telegram-desktop discord
 install_packages lutris steam chromium obsidian
 install_packages etcher-bin gimp 
@@ -60,10 +67,11 @@ install_packages zfxtop btop htop
 install_packages lazygit lazydocker
 install_packages neofetch cava typioca
 install_packages lsd bat
-install_packages tmux tpm
+install_packages tmux 
 install_packages clipboard
 # Image in tmux
 install_packages ueberzugpp
+install_packages xorg-xwininfo
 
 print_category "Fonts"
 install_packages noto-fonts ttf-jetbrains-mono-nerd noto-fonts-cjk
@@ -71,10 +79,13 @@ install_packages noto-fonts ttf-jetbrains-mono-nerd noto-fonts-cjk
 install_packages ttf-twemoji ttf-material-design-icons-git
 
 print_category "Dev"
-# mb: code code-icons
-install_packages vscodium-bin
+install_packages visual-studio-code-bin
 # REST запросы
-install_packages httpie filezilla
+install_packages httpie-desktop-bin filezilla
+install_packages github-cli spring-boot-cli
 install_packages docker docker-compose
 install_packages intellij-idea-community-edition
 install_packages postgresql pgcli
+install_packages mongodb-bin
+# JS
+install_packages yarn npm

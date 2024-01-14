@@ -14,12 +14,13 @@
   ],
   "modules-right": [
     "tray",
-    "group/rightpanel"
+    "group/rightpanel",
+    "keyboard-state",
+    "custom/fullscreen"
   ],
   "group/rightpanel": {
     "orientation": "horizontal",
     "modules": [
-      "keyboard-state",
       "hyprland/language",
       "custom/docker",
       "memory",
@@ -54,6 +55,11 @@
   "clock": {
     "format": "{: %H:%M %a %d.%m.%y}"
   }, // b - text month
+  "custom/fullscreen": {
+    "exec": "python ~/.config/waybar/GetActiveWindowStatus.py",
+    "interval": 1,
+    "format": "{} 👽"
+  },
   "custom/docker": {
     "exec": "(expr $(docker ps | wc -l) - 1)",
     "interval": 5,

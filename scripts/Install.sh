@@ -26,4 +26,5 @@ bash $SCRIPT_DIR/System/TerminalSetup.sh
 new_action "4/4 Installing grub theme"
 sudo bash $SCRIPT_DIR/System/GrubTheme.sh
 
+sudo usermod -aG wheel,docker,input $USER
 printf "${yellow}Installation completed!\n${N}"

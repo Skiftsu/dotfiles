@@ -1,6 +1,7 @@
 N=$(tput sgr0)
 green=$(tput setaf 2)
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # Terminal Plugins =============================================================================================================
   if [ ! -d "$HOME/.oh-my-zsh" ]; then
     printf "${green}Install ohmyzsh\n${N}"

@@ -1,5 +1,6 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
+mkdir ~/.config
 [ -d ~/.config/hypr ] &&      sudo rm -r $HOME/.config/hypr
 [ -d ~/.config/darkman ] &&   sudo rm -r $HOME/.config/darkman
 [ -d ~/.config/eww ] &&       sudo rm -r $HOME/.config/eww
