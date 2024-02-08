@@ -44,11 +44,12 @@ print_category "System"
 # Filesystem utils
 install_packages ntfs2btrfs exfat-utils
 install_packages qt5-wayland qt5ct libva libva-nvidia-driver-git
-install_packages hyprland hyprpaper waybar polkit-gnome
-install_packages xdg-desktop-portal-gtk xdg-desktop-portal-hyprland
-install_packages autofs hyprshot
+# Для таилового оконного менеджера
+# install_packages hyprland hyprpaper waybar polkit-gnome
+# install_packages xdg-desktop-portal-gtk xdg-desktop-portal-hyprland
+# install_packages autofs hyprshot
 # Уведомления, меню, лаунчер
-install_packages swaync eww-wayland rofi-lbonn-wayland
+#install_packages swaync eww-wayland rofi-lbonn-wayland
 
 print_category "Soft"
 # ЧтениеФайлов, PDF Rreader, торрент, image viewer, video viewer, file explorer, для работы с дисками
