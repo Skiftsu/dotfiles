@@ -14,17 +14,20 @@ function new_action() {
   sleep 0.5
 }
 
-new_action "1/4 Installing packages"
+new_action "1/5 Installing packages"
 bash $SCRIPT_DIR/System/Packages.sh
 
-new_action "2/4 Installing configs"
+new_action "2/5 Installing configs"
 bash $SCRIPT_DIR/System/ConfigInstaller.sh
 
-new_action "3/4 Terminal setup"
+new_action "3/5 Terminal setup"
 bash $SCRIPT_DIR/System/TerminalSetup.sh
 
-new_action "4/4 Installing grub theme"
+new_action "4/5 Installing grub theme"
 sudo bash $SCRIPT_DIR/System/GrubTheme.sh
+
+new_action "5/5 Enable system things"
+sudo bash $SCRIPT_DIR/System/System.sh
 
 sudo usermod -aG wheel,docker,input $USER
 printf "${yellow}Installation completed!\n${N}"

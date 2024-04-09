@@ -44,6 +44,8 @@ print_category "System"
 # Filesystem utils
 install_packages ntfs2btrfs exfat-utils
 install_packages qt5-wayland qt5ct libva libva-nvidia-driver-git
+# Detecting other operating systems in grub
+install_packages os-prober
 # Для таилового оконного менеджера
 # install_packages hyprland hyprpaper waybar polkit-gnome
 # install_packages xdg-desktop-portal-gtk xdg-desktop-portal-hyprland
