@@ -22,7 +22,6 @@
     "orientation": "horizontal",
     "modules": [
       "hyprland/language",
-      "custom/docker",
       "memory",
       "cpu",
       "pulseaudio"
@@ -49,8 +48,7 @@
   },
   "custom/logo": {
     "format": "󰣇",
-    "tooltip": false,
-    "on-click": "bash ~/.config/eww/scripts/launch_dashboard"
+    "tooltip": false
   },
   "clock": {
     "format": "{: %H:%M %a %d.%m.%y}"
@@ -58,12 +56,7 @@
   "custom/fullscreen": {
     "exec": "python ~/.config/waybar/GetActiveWindowStatus.py",
     "interval": 1,
-    "format": "{} 👽"
-  },
-  "custom/docker": {
-    "exec": "(expr $(docker ps | wc -l) - 1)",
-    "interval": 5,
-    "format": "󰡨 {}"
+    "format": "{}"
   },
   "keyboard-state": {
     "capslock": true,
@@ -93,14 +86,6 @@
     "on-click": "pavucontrol"
   },
   "hyprland/workspaces": {
-    "disable-scroll": true,
-    "persistent-workspaces": {
-      "1": ["HDMI-A-1"],
-      "2": ["DVI-D-1"],
-      "3": ["HDMI-A-1"],
-      "4": ["DVI-D-1"],
-      "5": ["HDMI-A-1"],
-      "6": ["DVI-D-1"]
-    }
+    "disable-scroll": true
   }
 }

@@ -6,7 +6,7 @@
 
 window#waybar {
   border-radius: 0px;
-  background: #32332c;
+  background: #000000;
 }
 
 
@@ -20,7 +20,7 @@ window#waybar {
 #custom-image {
   margin: 3px;
   border-radius: 4px;
-  background-image: url("/home/skiftsu/Pictures/4b.jpg");
+  background-image: url("/home/skiftsu/Pictures/bar.jpg");
   background-size: cover;
   background-position: center;
   padding: 0px 100px;
